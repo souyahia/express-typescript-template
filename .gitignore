@@ -1,0 +1,5 @@
+custom/
+coverage/
+dist/
+node_modules/
+.eslintcache

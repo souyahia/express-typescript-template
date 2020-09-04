@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+/dist
+*.tsbuildinfo
+.eslintcache
+.git
+.gitattributes
+.gitignore
+README.md
