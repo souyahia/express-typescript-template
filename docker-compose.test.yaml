@@ -1,10 +1,10 @@
 version: "3.8"
 
 services:
-  pecunia-web-server:
+  express-typescript-ws:
     build:
       context: ./
-    container_name: pecunia-ws-container
+    container_name: express-ws-container
     environment: 
       NODE_ENV: test
       coverage: "true"
