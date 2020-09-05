@@ -28,8 +28,11 @@ switch (nconf.get('Logger:Stream')) {
     throw new Error(`Unknown Logger Stream : ${nconf.get('Logger:Stream') as string}.`);
 }
 
+/**
+ * Application logger. Can be configured through NConf.
+ */
 const logger = createLogger({
-  name: 'pecunia-server-logger',
+  name: 'express-typescript-template-logger',
   level,
   streams: [stream],
   serializers: bunyanDebugStream.serializers,

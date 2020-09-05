@@ -9,11 +9,13 @@ const app = express();
 
 app.use(logMiddleware);
 
+// Add your middlewares here.
+
 registerRoutes(app);
 
 app.all('*', errorController.badEndPoint);
 
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'development') {
   app.use(errorhandlerMiddleware);
 }
 
