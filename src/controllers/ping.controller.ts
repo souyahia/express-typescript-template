@@ -17,7 +17,7 @@ import { Request, Response } from 'express';
  *       "url": "/ping",
  *     }
  */
-export function ping(req: Request, res: Response): void {
+export function getPing(req: Request, res: Response): void {
   res.status(200).send({
     message: 'Greetings from express-typescript-template web server.',
     date: new Date().toISOString(),
