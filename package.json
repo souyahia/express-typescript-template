@@ -39,7 +39,7 @@
     "prestart": "npm run build",
     "start": "node dist/server.js | ./node_modules/.bin/bunyan",
     "start:watch": "nodemon",
-    "apidoc": "rimraf apidoc && apidoc -i src/ -o apidoc/ -t apidoc-template/"
+    "apidoc": "rimraf apidoc && apidoc -i src/ -o apidoc/"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.6",

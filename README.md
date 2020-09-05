@@ -9,7 +9,6 @@ The project structure is as follows :
 ├── dist/                     [gitignored] JavaScript compiled files, type declarations and source maps
 ├── node_modules/             [gitignored] Node modules
 ├── apidoc/                   [gitignored] API Documentation output directory
-├── apidoc-template/          API Doc template written by Ahmed Dinar
 ├── test/                     TypeScript tests files (with the format *.test.ts)
 ├── src/                      TypeScript source files
 │   ├── config/               NConf configuration
@@ -111,4 +110,4 @@ This project includes the [API Doc](https://apidocjs.com/) package, used to auto
 
 > `npm run apidoc`
 
-The documentation will be generated in the `/apidoc` directory, using the [API Doc Template written by Ahmed Dinar](https://github.com/ahmed-dinar/apidoc-template/).
+The documentation will be generated in the `/apidoc` directory.
