@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import logger from '../logger';
 import nconf from '../config/nconf';
 
-const showHeaders = nconf.get('Logger:ShowHeaders') as boolean;
+const showHeaders = (nconf.get('Logger:ShowHeaders') as string).toLowerCase() === 'true';
 
 /**
  * Logging middleware automatically logging requests and responses.
@@ -16,7 +16,11 @@ export default function logMiddleware(req: Request, res: Response, next: NextFun
       message += `Incoming Headers : ${JSON.stringify(req.headers, null, 2)}\n`;
       message += `Outgoing Headers : ${JSON.stringify(res.getHeaders(), null, 2)}\n`;
     }
-    if (res.statusCode < 400) { logger.info(message); } else { logger.error(message); }
+    if (res.statusCode < 400) {
+      logger.info(message);
+    } else {
+      logger.error(message);
+    }
   });
   next();
 }

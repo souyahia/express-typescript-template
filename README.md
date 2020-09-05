@@ -6,11 +6,7 @@ This repository describes a custom NodeJs TypeScript project template, that can 
 The project structure is as follows :
 ```
 ├── coverage/             [gitignored] Test coverage reports
-├── dist/                 [gitignored] JavaScript compiled files
-│   ├── server.js         Main entry point
-│   ├── index.d.ts        Main type definition file
-│   ├── index.js.map      Main source map file
-│   └── ...
+├── dist/                 [gitignored] JavaScript compiled files, type declarations and source maps
 ├── node_modules/         [gitignored] Node modules
 ├── test/                 TypeScript tests files (with the format *.test.ts)
 ├── src/                  TypeScript source files
@@ -42,7 +38,9 @@ The project structure is as follows :
 ├── LICENSE               Project License
 ├── Dockerfile            Dockerfile to run the server in a container
 ├── docker-entrypoint.sh  Entry point of the Dockerfile
-├── docker-compose.yaml   Compose file to start the development in live reload
+├── docker-compose.yaml   Compose file for production 
+├── docker-compose.dev.yaml   Compose file for development
+├── docker-compose.test.yaml   Compose file for tests
 ├── nodemon.json          Nodemon configuration file
 ├── tsconfig.json         TypeScript project configuration file
 └── tsconfig.eslint.json  TypeScript configuraiton file for the ESLint parser
@@ -51,13 +49,23 @@ The project structure is as follows :
 # How to use
 ## Development
 To run the server in development mode, simply use docker-compose with the following command :
-> `docker-compose up`
+
+> `docker-compose -f docker-compose.dev.yaml up`
+
 The server will be started in live reload mode, meaning every change in the source code will trigger a TypeScript compilation and a restart of the server.
 
 The environment variables defined in the compose file are configuration properties given to NConf and can be edited.
 
+## Test
+To run the test suites, use the following command :
+
+> `docker-compose -f docker-compose.test.yaml up`
+
+This will start the application in a new container, and run the tests suites. The `coverage` environment variable specifies whether or not the code coverage is collected during the test suites.
+
 ## Production
-The server can be run in production using the dockerfile of the project with the `NODE_ENV` environment variable set to `production`.
+The server can be run in production using the dockerfile of the project with the `NODE_ENV` environment variable set to `production`, or directly with docker-compose with the following command :
+> `docker-compose up`
 
 # Features
 ## TypeScript
@@ -91,9 +99,3 @@ To automatically fix linting errors, run the following command :
 [Jest](https://jestjs.io/) is the testing framework used in this project. The framework is used with the [ts-jest](https://www.npmjs.com/package/ts-jest) to allow the writing and execution of tests in TypeScript without compilation.
 
 Jest will execute every test file located in the `/spec` directory and ending with `.spec.ts`. The coverage report is generated in the LCOV format, and located in the `/coverage` directory.
-
-To run the tests, use the following command :
-> `npm run test`
-
-To run the tests and generate a coverage report, use the following command :
-> `npm run test:coverage`

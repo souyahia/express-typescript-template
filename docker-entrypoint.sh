@@ -4,7 +4,12 @@ then
   NPM_SCRIPT="start:watch"
 elif [ "${NODE_ENV}" = "test" ]
 then
-  NPM_SCRIPT="test"
+  if [ "${coverage}" = "true" ]
+  then
+    NPM_SCRIPT="test:coverage"
+  else
+    NPM_SCRIPT="test"
+  fi
 else
   NPM_SCRIPT="start"
 fi

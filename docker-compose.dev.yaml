@@ -6,12 +6,12 @@ services:
       context: ./
     container_name: pecunia-ws-container
     environment: 
-      NODE_ENV: production
-      Server__Port: 80
-      Logger__Level: "info"
+      NODE_ENV: development
+      Server__Port: 3005
+      Logger__Level: "debug"
       Logger__Stream: "bunyan-debug-stream"
-      Logger__ShowHeaders: "false"
+      Logger__ShowHeaders: "true"
     ports:
-      - "50300:80"
+      - "3005:3005"
     volumes:
       - "./:/home/node/app"
