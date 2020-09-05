@@ -5,45 +5,45 @@ This repository describes a custom NodeJs TypeScript project template, that can 
 # Project Structure
 The project structure is as follows :
 ```
-├── coverage/             [gitignored] Test coverage reports
-├── dist/                 [gitignored] JavaScript compiled files, type declarations and source maps
-├── node_modules/         [gitignored] Node modules
-├── test/                 TypeScript tests files (with the format *.test.ts)
-├── src/                  TypeScript source files
-│   ├── config/           NConf configuration
+├── coverage/                 [gitignored] Test coverage reports
+├── dist/                     [gitignored] JavaScript compiled files, type declarations and source maps
+├── node_modules/             [gitignored] Node modules
+├── test/                     TypeScript tests files (with the format *.test.ts)
+├── src/                      TypeScript source files
+│   ├── config/               NConf configuration
 │   │   └── ...
-│   ├── controllers/      Express Controllers
+│   ├── controllers/          Express Controllers
 │   │   └── ...
-│   ├── middleware/       Express Middleware
+│   ├── middleware/           Express Middleware
 │   │   └── ...
-│   ├── routes/           Express Route Registering
+│   ├── routes/               Express Route Registering
 │   │   └── ...
-│   ├── app.ts            Express App configuration
-│   ├── logger.ts         Bunynan Logger Implementation
-│   └── server.ts         Main TypeScript file
-├── .eslintcache          [gitignored] ESLint cache
-├── .eslintignore         Files ignored by ESLint
-├── .dockerignore         Files ignored by Docker
-├── .eslintrc.json        ESLint configuration file
-├── .gitattributes        Git EOL normalization and diff configuration patterns
-├── .gitignore            Files ignored by GIT
-├── .npmignore            Files ignored by NPM (for publishing)
-├── .npmrc                NPM configuration file
-├── .prettierignore       Files ignored by Prettier
-├── .prettierrc.json      Prettier configuration file
-├── jest.config.js        Jest configuration file
-├── package.json          Project package.json
-├── package-lock.json     Package lock (can be removed to update dep versions)
-├── README.md             README of the repo
-├── LICENSE               Project License
-├── Dockerfile            Dockerfile to run the server in a container
-├── docker-entrypoint.sh  Entry point of the Dockerfile
-├── docker-compose.yaml   Compose file for production 
+│   ├── app.ts                Express App configuration
+│   ├── logger.ts             Bunynan Logger Implementation
+│   └── server.ts             Main TypeScript file
+├── .eslintcache              [gitignored] ESLint cache
+├── .eslintignore             Files ignored by ESLint
+├── .dockerignore             Files ignored by Docker
+├── .eslintrc.json            ESLint configuration file
+├── .gitattributes            Git EOL normalization and diff configuration patterns
+├── .gitignore                Files ignored by GIT
+├── .npmignore                Files ignored by NPM (for publishing)
+├── .npmrc                    NPM configuration file
+├── .prettierignore           Files ignored by Prettier
+├── .prettierrc.json          Prettier configuration file
+├── jest.config.js            Jest configuration file
+├── package.json              Project package.json
+├── package-lock.json         Package lock (can be removed to update dep versions)
+├── README.md                 README of the repo
+├── LICENSE                   Project License
+├── Dockerfile                Dockerfile to run the server in a container
+├── docker-entrypoint.sh      Entry point of the Dockerfile
+├── docker-compose.yaml       Compose file for production 
 ├── docker-compose.dev.yaml   Compose file for development
-├── docker-compose.test.yaml   Compose file for tests
-├── nodemon.json          Nodemon configuration file
-├── tsconfig.json         TypeScript project configuration file
-└── tsconfig.eslint.json  TypeScript configuraiton file for the ESLint parser
+├── docker-compose.test.yaml  Compose file for tests
+├── nodemon.json              Nodemon configuration file
+├── tsconfig.json             TypeScript project configuration file
+└── tsconfig.eslint.json      TypeScript configuraiton file for the ESLint parser
 ```
 
 # How to use
