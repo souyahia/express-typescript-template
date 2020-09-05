@@ -59,7 +59,7 @@ The server will be started in live reload mode, meaning every change in the sour
 
 The environment variables defined in the compose file are configuration properties given to NConf and can be edited.
 
-## Test
+## Test
 To run the test suites, use the following command :
 
 > `docker-compose -f docker-compose.test.yaml up`
