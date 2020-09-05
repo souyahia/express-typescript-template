@@ -1,9 +1,21 @@
-/* eslint-disable import/prefer-default-export */
 import { Request, Response } from 'express';
 
 /**
- * Ping the web server and get a greeting message.
- * @route GET /ping
+ * @api { get } /ping Ping the server.
+ * @apiName GetPing
+ * @apiGroup Ping
+ *
+ * @apiSuccess (200) { String } message Greeting message from the server.
+ * @apiSuccess (200) { String } date Current date time.
+ * @apiSuccess (200) { String } url Url of the request.
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "message": "Greetings from express-typescript-template web server.",
+ *       "date": "2020-09-05T18:37:01.849Z",
+ *       "url": "/ping",
+ *     }
  */
 export function ping(req: Request, res: Response): void {
   res.status(200).send({

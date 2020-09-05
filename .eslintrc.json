@@ -11,5 +11,9 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["./tsconfig.eslint.json"]
+  },
+  "rules": {
+    "import/no-cycle": "off",
+    "import/prefer-default-export": "off"
   }
 }

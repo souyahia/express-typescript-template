@@ -8,6 +8,8 @@ The project structure is as follows :
 ├── coverage/                 [gitignored] Test coverage reports
 ├── dist/                     [gitignored] JavaScript compiled files, type declarations and source maps
 ├── node_modules/             [gitignored] Node modules
+├── apidoc/                   [gitignored] API Documentation output directory
+├── apidoc-template/          API Doc template written by Ahmed Dinar
 ├── test/                     TypeScript tests files (with the format *.test.ts)
 ├── src/                      TypeScript source files
 │   ├── config/               NConf configuration
@@ -42,6 +44,7 @@ The project structure is as follows :
 ├── docker-compose.dev.yaml   Compose file for development
 ├── docker-compose.test.yaml  Compose file for tests
 ├── nodemon.json              Nodemon configuration file
+├── apidoc.json               API Doc configuration file
 ├── tsconfig.json             TypeScript project configuration file
 └── tsconfig.eslint.json      TypeScript configuraiton file for the ESLint parser
 ```
@@ -65,6 +68,7 @@ This will start the application in a new container, and run the tests suites. Th
 
 ## Production
 The server can be run in production using the dockerfile of the project with the `NODE_ENV` environment variable set to `production`, or directly with docker-compose with the following command :
+
 > `docker-compose up`
 
 # Features
@@ -90,12 +94,21 @@ This project uses an [ESLint](https://eslint.org/) linter, along with [Prettier]
 The Jest plugin is also installed to allow Jest and ESLint to work together properly.
 
 To run a lint check, use the following command :
+
 > `npm run lint`
 
 To automatically fix linting errors, run the following command :
+
 > `npm run lint:fix`
 
 ## Test
 [Jest](https://jestjs.io/) is the testing framework used in this project. The framework is used with the [ts-jest](https://www.npmjs.com/package/ts-jest) to allow the writing and execution of tests in TypeScript without compilation.
 
 Jest will execute every test file located in the `/spec` directory and ending with `.spec.ts`. The coverage report is generated in the LCOV format, and located in the `/coverage` directory.
+
+## API Doc
+This project includes the [API Doc](https://apidocjs.com/) package, used to automatically generated an API Documentation based on the API Doc comments of the Express code. To generate the API Doc, run the following command :
+
+> `npm run apidoc`
+
+The documentation will be generated in the `/apidoc` directory, using the [API Doc Template written by Ahmed Dinar](https://github.com/ahmed-dinar/apidoc-template/).

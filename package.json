@@ -38,7 +38,8 @@
     "prettier:fix": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\"",
     "prestart": "npm run build",
     "start": "node dist/server.js | ./node_modules/.bin/bunyan",
-    "start:watch": "nodemon"
+    "start:watch": "nodemon",
+    "apidoc": "rimraf apidoc && apidoc -i src/ -o apidoc/ -t apidoc-template/"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.6",
@@ -50,6 +51,7 @@
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
+    "apidoc": "^0.25.0",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-airbnb-typescript": "^9.0.0",
