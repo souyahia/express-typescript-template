@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { createLogger, LogLevelString, Stream } from 'bunyan';
 import bunyanDebugStream from 'bunyan-debug-stream';

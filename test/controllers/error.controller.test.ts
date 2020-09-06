@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import request from 'supertest';
 import app from '../../src/app';
 

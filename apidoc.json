@@ -3,5 +3,12 @@
   "version": "0.0.1",
   "description": "A custom project template for NodeJs Express web server developed using TypeScript.",
   "title": "Express Typescript Template API",
-  "url" : "https://localhost"
+  "url" : "https://localhost",
+  "order": [
+    "Ping",
+    "GetPing",
+    "Hello",
+    "GetHello",
+    "GetCustomHello"
+  ]
 }
