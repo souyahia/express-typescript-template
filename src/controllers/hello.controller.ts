@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 export function getHello(req: Request, res: Response): void {
-  res.status(200).send({
+  res.status(200).json({
     message: 'Hello world!',
     date: new Date().toISOString(),
   });
