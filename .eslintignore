@@ -1,3 +1,4 @@
-*
-!src/
-!test/
+*.js
+apidoc-template/
+node_modules/
+dist/
