@@ -1,13 +1,13 @@
 import { argv } from 'nconf';
-import path from 'path';
+import { join } from 'path';
 
 /**
  * Web server server environment configuration. Define your global configuration properties in the `global.json` file.
  */
-const nconf = argv()
+const config = argv()
   .env('__')
   .file({
-    file: path.join(__dirname, 'global.json'),
+    file: join(__dirname, 'global.json'),
   });
 
-export default nconf;
+export default config;

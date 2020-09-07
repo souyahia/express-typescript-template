@@ -1,7 +1,7 @@
-import express from 'express';
+import { Router } from 'express';
 import { endpointErrorController } from '../controllers';
 
-const endpointErrorRouter = express.Router();
+const endpointErrorRouter = Router();
 
 endpointErrorRouter.all('*', endpointErrorController.endPointError);
 

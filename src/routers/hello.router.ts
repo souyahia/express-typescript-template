@@ -1,9 +1,9 @@
-import express from 'express';
+import { Router } from 'express';
 import { body } from 'express-validator';
 import { helloController } from '../controllers';
 import { paramsValidatorMiddleware } from '../middleware';
 
-const helloRouter = express.Router();
+const helloRouter = Router();
 
 /**
  * @api { get } /hello Get a hello message from the server.

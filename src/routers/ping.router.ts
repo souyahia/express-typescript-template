@@ -1,7 +1,7 @@
-import express from 'express';
+import { Router } from 'express';
 import { pingController } from '../controllers';
 
-const pingRouter = express.Router();
+const pingRouter = Router();
 
 /**
  * @api { get } /ping Ping the server.

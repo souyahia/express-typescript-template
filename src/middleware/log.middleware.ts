@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import logger from '../logger';
-import nconf from '../config/nconf';
+import config from '../config';
 
-const showHeaders = (nconf.get('Logger:ShowHeaders') as string).toLowerCase() === 'true';
+const showHeaders = (config.get('Logger:ShowHeaders') as string).toLowerCase() === 'true';
 
 /**
  * Logging middleware automatically logging requests and responses.

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { createLogger, LogLevelString, Stream } from 'bunyan';
 import bunyanDebugStream from 'bunyan-debug-stream';
-import nconf from './config/nconf';
+import config from './config';
 
-const level = nconf.get('Logger:Level') as LogLevelString;
+const level = config.get('Logger:Level') as LogLevelString;
 let stream: Stream = null;
 
-switch (nconf.get('Logger:Stream')) {
+switch (config.get('Logger:Stream')) {
   case 'stdout':
     stream = {
       level,
@@ -23,7 +23,7 @@ switch (nconf.get('Logger:Stream')) {
     };
     break;
   default:
-    throw new Error(`Unknown Logger Stream : ${nconf.get('Logger:Stream') as string}.`);
+    throw new Error(`Unknown Logger Stream : ${config.get('Logger:Stream') as string}.`);
 }
 
 /**

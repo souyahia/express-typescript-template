@@ -1,5 +1,5 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import { json, urlencoded } from 'body-parser';
 import { pingRouter, helloRouter, endpointErrorRouter } from './routers';
 import logger from './logger';
 import { logMiddleware, errorhandlerMiddleware } from './middleware';
@@ -8,8 +8,8 @@ logger.debug('Creating Express app...');
 const app = express();
 
 app.use(logMiddleware);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 // Add your middlewares here.
 

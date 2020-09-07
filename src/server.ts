@@ -1,8 +1,8 @@
 import app from './app';
-import nconf from './config/nconf';
+import config from './config';
 import logger from './logger';
 
-const port = nconf.get('Server:Port') as string;
+const port = config.get('Server:Port') as string;
 
 logger.debug(`Starting server on port ${port}...`);
 const server = app.listen(port, () => {
