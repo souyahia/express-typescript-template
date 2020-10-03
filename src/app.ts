@@ -2,7 +2,7 @@ import express from 'express';
 import { json, urlencoded } from 'body-parser';
 import { pingRouter, helloRouter, endpointErrorRouter } from './routers';
 import logger from './logger';
-import { logMiddleware, errorhandlerMiddleware } from './middleware';
+import { logMiddleware, errorHandlerMiddleware } from './middleware';
 
 logger.debug('Creating Express app...');
 const app = express();
@@ -18,9 +18,7 @@ app.use('/ping', pingRouter);
 app.use('/hello', helloRouter);
 app.use('*', endpointErrorRouter);
 
-if (process.env.NODE_ENV === 'development') {
-  app.use(errorhandlerMiddleware);
-}
+app.use(errorHandlerMiddleware);
 
 logger.debug('Express app successfully created.');
 

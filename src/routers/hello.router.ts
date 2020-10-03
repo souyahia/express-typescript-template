@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
 import { helloController } from '../controllers';
-import { paramsValidatorMiddleware } from '../middleware';
+import { paramsValidatorMiddleware, asyncWraper } from '../middleware';
 
 const helloRouter = Router();
 
@@ -73,7 +73,7 @@ helloRouter.post(
   '/:name',
   [body('language').isIn(['US', 'FR']), body('sendDate').optional().isBoolean()],
   paramsValidatorMiddleware,
-  helloController.getCustomHello
+  asyncWraper(helloController.getCustomHello)
 );
 
 export default helloRouter;

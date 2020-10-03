@@ -75,7 +75,6 @@
     "body-parser": "^1.19.0",
     "bunyan": "^1.8.14",
     "bunyan-debug-stream": "^2.0.0",
-    "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
     "nconf": "^0.10.0"
